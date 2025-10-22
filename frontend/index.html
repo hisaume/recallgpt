@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RecallGPT</title>
+</head>
+<body>
+    <h1>RecallGPT</h1>
+    <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Say something..." required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="response"></div>
+    <script>
+        document.getElementById('chat-form').onsubmit = async function(e) {
+            e.preventDefault();
+            const input = document.getElementById('user-input').value;
+            const res = await fetch('/chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({input})
+            });
+            const data = await res.json();
+            document.getElementById('response').innerText = data.response || "No response";
+        };
+    </script>
+</body>
+</html>

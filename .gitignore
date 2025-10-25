@@ -11,3 +11,6 @@ backend/venv/
 
 # VS Code settings
 .vscode/
+
+# Environment variables
+.env

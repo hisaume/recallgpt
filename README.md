@@ -27,8 +27,3 @@ RecallGPT is a lightweight app that layers persistent, curated memory onto ChatG
 3. Install dependencies (FastAPI, Chroma, SQLite, OpenAI)
 4. Run backend server
 5. Access frontend via backend server
-
-## No authentication included during the proof-of-concept. Manual local development only.
-
----
-For detailed setup and usage, see instructions in each folder.

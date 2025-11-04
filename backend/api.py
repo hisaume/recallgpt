@@ -26,7 +26,7 @@ async def chat(request: Request):
             {"role": "user", "content": user_input}
         ]
     )
-    ai_response = response.choices[0].message["content"] 
+    ai_response = response.choices[0].message.content
     # Log interaction
     add_log(user_input, ai_response)
     return {"response": ai_response, "context": context}

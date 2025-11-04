@@ -1,7 +1,8 @@
 import sqlite3
 from datetime import datetime
+import os
 
-DB_PATH = "../recallgpt.db"
+DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../recallgpt.db"))
 
 def get_logs(limit=10):
     conn = sqlite3.connect(DB_PATH)

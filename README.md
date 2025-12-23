@@ -1,29 +1,16 @@
 # RecallGPT
 
+This project is intended for building, experimenting and testing the database, to be used in other LLM apps upon completion.
+
 RecallGPT is a lightweight app that layers persistent, curated memory onto ChatGPT. It logs interactions, stores embeddings, and retrieves relevant context to improve continuity and relevance.
 
-## Architecture
+## Technology
 - **Backend:** Python (FastAPI)
-- **Frontend:** Static HTML/CSS/JS served by backend
 - **Database:** SQLite for logs
 - **Vector Store:** Chroma for embeddings
+- The placeholder frontend: A static web page served by backend
 
-## Folder Structure
-- `backend/` — FastAPI app, REST endpoints, database logic
-- `frontend/` — HTML, CSS, JS files
-- `memory/` — MemoryStore abstraction, Chroma integration
+## Main Data Flow
+Backend queries memory (SQLite + Chroma), Relevant logs/context retrieved
+(interact with )OpenAI API for a response), User input, AI response, and embedding stored in database
 
-## Data Flow
-1. User input sent from frontend to backend
-2. Backend queries memory (SQLite + Chroma)
-3. Relevant logs/context retrieved
-4. OpenAI API called for reasoning
-5. Response returned to frontend
-6. User input, AI response, and embedding stored in database
-
-## Setup Instructions
-1. Install Python 3.x and Node.js (if needed for frontend tooling)
-2. Create a Python virtual environment in `backend/`
-3. Install dependencies (FastAPI, Chroma, SQLite, OpenAI)
-4. Run backend server
-5. Access frontend via backend server
